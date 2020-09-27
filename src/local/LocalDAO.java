@@ -41,7 +41,7 @@ public class LocalDAO {
 	public ArrayList<LocalEntidade> listarInformacoesLocal(String nome_local) {
 		ArrayList<LocalEntidade> lista = new ArrayList<LocalEntidade>();
 		for(LocalEntidade l : locais) {
-			if(l.getLocal_nome().contains(nome_local)) {
+			if(l.getLocal_nome().toLowerCase().contains(nome_local.toLowerCase())) {
 				lista.add(l);
 			}
 		}
@@ -64,5 +64,15 @@ public class LocalDAO {
 			}
 		}
 		return false;
+	}
+	
+	public ArrayList<Integer> pegarIds(String nome) {
+		ArrayList <Integer> ids = new ArrayList<Integer>();
+		for(LocalEntidade l : locais) {
+			if(l.getLocal_bairro().toLowerCase().contains(nome.toLowerCase())) {
+				ids.add(l.getLocal_id());
+			}
+		}
+		return ids;
 	}
 }

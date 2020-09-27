@@ -53,4 +53,18 @@ public class EventoDAO {
 		}
 		return false;
 	}
+	
+	public ArrayList<EventoEntidade> listarPorBairro(ArrayList<Integer> ids){
+		AtracaoEventoDAO atracaoEventoDAO = AtracaoEventoDAO.getInstance();
+		ArrayList<EventoEntidade> eventosBairro = new ArrayList<EventoEntidade>();
+		for(EventoEntidade e : eventos) {
+			for(Integer i : ids) {
+				if(e.getEvento_local() == i) {
+					e.setEvento_atracoes(atracaoEventoDAO.listarAtracoesEvento(e.getEvento_id()));
+					eventosBairro.add(e);
+				}
+			}
+		}
+		return eventosBairro;
+	}
 }

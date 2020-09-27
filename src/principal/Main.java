@@ -28,12 +28,7 @@ public class Main {
 				do {
 					menu.menuParticipante();
 					operacao = input.nextInt();
-					if(operacao == 1) {
-						part.listarEventos();
-					}
-					else if(operacao == 2) {
-						part.listarInformacoesLocal();
-					}
+					part.escolheOpcao(operacao);
 				}
 				while(operacao != 0);
 			}

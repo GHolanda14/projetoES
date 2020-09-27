@@ -16,17 +16,19 @@ public class Administrador {
 		do{
 			switch(classe) {
 				case 1:
-					menu.menuCRUD();
+					System.out.println(menu.menuCRUD().replaceAll("3 - Listar\n0 - Voltar","3 - Listar todos os eventos\n"
+							+ "4 - Listar eventos por bairro\n0 - Voltar"));
 					comando = input.nextInt();
 					gerenciarEvento(comando);
 					break;
 				case 2:
-					menu.menuCRUD();
+					System.out.println(menu.menuCRUD());
 					comando = input.nextInt();
 					gerenciarLocal(comando);
 					break;
 				case 3:
-					menu.menuCRUD();
+					System.out.println(menu.menuCRUD().replaceAll("0 - Voltar", "4 - Incluir atracao ao evento\n5 - Excluir atracao do evento"
+							+ "\n0 - Voltar"));
 					comando = input.nextInt();
 					gerenciarAtracao(comando);
 					break;
@@ -50,7 +52,10 @@ public class Administrador {
 				eventoFronteira.excluirEvento();
 				break;
 			case 3:
-				eventoFronteira.listarEventos(1);
+				eventoFronteira.listarTodosEventos(1);
+				break;
+			case 4:
+				eventoFronteira.listarPorBairros(1);
 				break;
 			case 0:
 				comando = 0;

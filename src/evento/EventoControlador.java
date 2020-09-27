@@ -37,4 +37,8 @@ public class EventoControlador {
 	public boolean eventoExiste(int id) {
 		return eventoDAO.eventoExiste(id);
 	}
+	
+	public ArrayList<EventoEntidade> listarPorBairro(ArrayList<Integer> ids){
+		return eventoDAO.listarPorBairro(ids);
+	}
 }

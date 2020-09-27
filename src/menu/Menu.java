@@ -12,17 +12,8 @@ public class Menu {
 		System.out.println("0 - Voltar");
 	}
 	
-	public void menuCRUD() {
-		System.out.println("1 - Cadastrar");
-		System.out.println("2 - Excluir");
-		System.out.println("3 - Listar");
-		System.out.println("0 - Voltar");
-	}
-	
-	public void menuAtracaoEvento() {
-		System.out.println("4 - Incluir atracao em um evento");
-		System.out.println("5 - Excluir atracao de um evento");
-		System.out.println("0 - Voltar");
+	public String menuCRUD() {
+		return "1 - Cadastrar\n2 - Excluir\n3 - Listar\n0 - Voltar";
 	}
 	
 	public void menuEscolheUsuario() {
@@ -33,7 +24,8 @@ public class Menu {
 	
 	public void menuParticipante() {
 		System.out.println("1 - Lista de eventos");
-		System.out.println("2 - Listar informacoes do local");
+		System.out.println("2 - Listar eventos por bairro");
+		System.out.println("3 - Listar informacoes do local");
 		System.out.println("0 - Voltar");
 	}
 }

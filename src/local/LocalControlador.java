@@ -46,4 +46,7 @@ public class LocalControlador {
 		return localDAO.localExiste(id);
 	}
 	
+	public ArrayList<Integer> pegarIds(String nome) {
+		return localDAO.pegarIds(nome);
+	}
 }

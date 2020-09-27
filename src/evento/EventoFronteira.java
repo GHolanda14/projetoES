@@ -64,8 +64,7 @@ public class EventoFronteira {
 		}
 	}
 	
-	public void listarEventos(int usuario) {
-		ArrayList <EventoEntidade> eventos = eventoControlador.listareventos();
+	public void listarEventos(int usuario, ArrayList<EventoEntidade> eventos) {
 		if(eventos.isEmpty()) {
 			System.out.println("Nao exitem eventos");
 		}
@@ -81,5 +80,18 @@ public class EventoFronteira {
 				System.out.println("-----------------------------------------------------------------");
 			}
 		}
+	}
+	
+	public void listarPorBairros(int usuario){
+		System.out.print("Nome do bairro: ");
+		String nome = input.nextLine();
+		ArrayList<Integer> ids = localControlador.pegarIds(nome);
+		ArrayList<EventoEntidade> eventos = eventoControlador.listarPorBairro(ids);
+		listarEventos(usuario,eventos);
+	}
+	
+	public void listarTodosEventos(int usuario) {
+		ArrayList <EventoEntidade> eventos = eventoControlador.listareventos();
+		listarEventos(usuario,eventos);
 	}
 }

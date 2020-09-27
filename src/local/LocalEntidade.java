@@ -35,8 +35,8 @@ public class LocalEntidade {
 		return local_id;
 	}
 	
-	public void setLocal_id(int local_id) {
-		this.local_id = local_id;
+	public String getLocal_bairro() {
+		return local_bairro;
 	}
 	
 	public String getLocal_nome() {
