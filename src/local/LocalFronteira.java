@@ -58,7 +58,7 @@ public class LocalFronteira {
 		}
 	}
 	
-	public void listarAtracoesAdm() {
+	public void listarLocais() {
 		ArrayList <LocalEntidade> locais = localControlador.listarlocais();
 		if(locais.isEmpty()) {
 			System.out.println("Nao exitem locais");

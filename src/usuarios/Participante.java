@@ -7,7 +7,7 @@ public class Participante {
 	
 	public void listarEventos() {
 		EventoFronteira eventoFronteira = new EventoFronteira();
-		eventoFronteira.listarAtracoes(2);
+		eventoFronteira.listarEventos(2);
 	}
 	public void listarInformacoesLocal() {
 		LocalFronteira localFronteira = new LocalFronteira();

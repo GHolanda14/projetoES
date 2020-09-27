@@ -64,7 +64,7 @@ public class EventoFronteira {
 		}
 	}
 	
-	public void listarAtracoes(int usuario) {
+	public void listarEventos(int usuario) {
 		ArrayList <EventoEntidade> eventos = eventoControlador.listareventos();
 		if(eventos.isEmpty()) {
 			System.out.println("Nao exitem eventos");

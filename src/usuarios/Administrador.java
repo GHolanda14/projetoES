@@ -50,7 +50,7 @@ public class Administrador {
 				eventoFronteira.excluirEvento();
 				break;
 			case 3:
-				eventoFronteira.listarAtracoes(1);
+				eventoFronteira.listarEventos(1);
 				break;
 			case 0:
 				comando = 0;
@@ -71,7 +71,7 @@ public class Administrador {
 			localFronteira.excluirLocal();
 			break;
 		case 3:
-			localFronteira.listarAtracoesAdm();
+			localFronteira.listarLocais();
 			break;
 		case 0:
 			comando = 0;
