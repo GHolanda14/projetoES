@@ -51,7 +51,7 @@ public class LocalDAO {
 	public String buscaId(int id) {
 		for(LocalEntidade l : locais) {
 			if(l.getLocal_id() == id) {
-				return l.getLocal_nome();
+				return l.getLocal_nome()+"\nContato: "+l.getLocal_telefone();
 			}
 		}
 		return "";
