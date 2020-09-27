@@ -27,7 +27,7 @@ public class LocalEntidade {
 	}
 	public String toStringParticipante() {
 		return local_nome+"\nBairro: "+local_bairro+"\nEndereço: "+local_rua+
-				", Nº "+local_numero+"\nPonto de referencia"+
+				", Nº "+local_numero+"\nPonto de referencia: "+
 				local_pontoDeReferencia+"\nContato: "+local_telefone;
 	}
 	
@@ -37,6 +37,10 @@ public class LocalEntidade {
 	
 	public String getLocal_bairro() {
 		return local_bairro;
+	}
+	
+	public String getLocal_telefone() {
+		return local_telefone;
 	}
 	
 	public String getLocal_nome() {
