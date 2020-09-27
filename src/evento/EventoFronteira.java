@@ -25,28 +25,32 @@ public class EventoFronteira {
 			System.out.print("Data(AAAA-MM-DD): ");
 			date = input.nextLine();
 			LocalDate data = LocalDate.parse(date);
-			
-			System.out.print("Horario(HH:MM): ");
-			time = input.nextLine();
-			LocalTime horario = LocalTime.parse(time);
-	
-			System.out.print("Id do local: ");
-			local = input.nextInt();
-			input.nextLine();
-			
-			System.out.print("Descricao: ");
-			descricao = input.nextLine();
-			
-			if(localControlador.localExiste(local)) {
-				EventoEntidade e = new EventoEntidade(id, nome, descricao, data, horario, local);
-				if(eventoControlador.cadastrarEvento(e)) {
-					System.out.println("Cadastrado com sucesso!");
-				}else {
-					System.out.println("Deu ruim");
+			if(data.isAfter(LocalDate.now())){
+				System.out.print("Horario(HH:MM): ");
+				time = input.nextLine();
+				LocalTime horario = LocalTime.parse(time);
+		
+				System.out.print("Id do local: ");
+				local = input.nextInt();
+				input.nextLine();
+				
+				System.out.print("Descricao: ");
+				descricao = input.nextLine();
+				
+				if(localControlador.localExiste(local)) {
+					EventoEntidade e = new EventoEntidade(id, nome, descricao, data, horario, local);
+					if(eventoControlador.cadastrarEvento(e)) {
+						System.out.println("Cadastrado com sucesso!");
+					}else {
+						System.out.println("Deu ruim");
+					}
+				}
+				else {
+					System.out.println("Esse local nao existe!");
 				}
 			}
 			else {
-				System.out.println("Esse local nao existe!");
+				System.out.println("A data tem que ser superior a atual");
 			}
 		}
 		else {
