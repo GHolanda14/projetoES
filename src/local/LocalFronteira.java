@@ -33,14 +33,18 @@ public class LocalFronteira {
 			
 			System.out.print("Telefone (XX) XXXXX-XXXX: ");
 			telefone = input.nextLine();
-
-			LocalEntidade e = new LocalEntidade(id, nome, bairro, rua, numero, pontoDeReferencia, telefone);
-			if(localControlador.cadastrarLocal(e)) {
-				System.out.println("Cadastrado com sucesso!");
+			if(!nome.equals("") && !bairro.equals("") && !rua.equals("") && !telefone.equals("")) {
+				LocalEntidade e = new LocalEntidade(id, nome, bairro, rua, numero, pontoDeReferencia, telefone);
+				if(localControlador.cadastrarLocal(e)) {
+					System.out.println("Cadastrado com sucesso!");
+				}
+				else{
+					System.out.println("Erro ao tentar cadastrar");	
+				}
 			}
-			else{
-				System.out.println("Erro ao tentar cadastrar");	
-			}	
+			else {
+				System.out.println("Existem campos vazios, tente novamente!");
+			}
 		}
 		else {
 			System.out.println("Esse id ja esta cadastrado!");
@@ -49,12 +53,15 @@ public class LocalFronteira {
 	}
 	
 	public void excluirLocal() {
-		System.out.print("Digite o id: ");
-		if(localControlador.excluirLocal(input.nextInt())) {
-			System.out.println("Deletado com sucesso!");
-		}
-		else {
-			System.out.println("Erro ao tentar deletar");
+		listarLocais();
+		if(!localControlador.listarlocais().isEmpty()) {
+			System.out.print("Digite o id: ");
+			if(localControlador.excluirLocal(input.nextInt())) {
+				System.out.println("Deletado com sucesso!");
+			}
+			else {
+				System.out.println("Erro ao tentar deletar");
+			}
 		}
 	}
 	

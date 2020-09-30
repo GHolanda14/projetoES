@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import atracaoEvento.AtracaoEventoDAO;
 
 public class EventoDAO {
-	ArrayList<EventoEntidade> eventos;
+	private ArrayList<EventoEntidade> eventos;
 	private static EventoDAO eventoDAO;
 	
 	EventoDAO(){

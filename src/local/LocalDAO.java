@@ -3,7 +3,7 @@ package local;
 import java.util.ArrayList;
 
 public class LocalDAO {
-	ArrayList<LocalEntidade> locais = new ArrayList<LocalEntidade>();
+	private ArrayList<LocalEntidade> locais = new ArrayList<LocalEntidade>();
 	private static LocalDAO localDAO;
 	
 	LocalDAO(){

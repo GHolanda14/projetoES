@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class AtracaoFronteira {
-	AtracaoControlador atracaoControlador = AtracaoControlador.getInstance();
+	private AtracaoControlador atracaoControlador = AtracaoControlador.getInstance();
 	Scanner input = new Scanner(System.in);
 	public void cadastrarAtracao() {
 		int id;
@@ -22,13 +22,17 @@ public class AtracaoFronteira {
 			
 			System.out.print("Telefone (XX) XXXXX-XXXX: ");
 			telefone = input.nextLine();
-			
-			AtracaoEntidade e = new AtracaoEntidade(id,nome,email,telefone);
-			if(atracaoControlador.cadastrarAtracao(e)) {
-				System.out.println("Cadastrado com sucesso!");
+			if(!nome.equals("") && !email.equals("") && !telefone.equals("")) {
+				AtracaoEntidade e = new AtracaoEntidade(id,nome,email,telefone);
+				if(atracaoControlador.cadastrarAtracao(e)) {
+					System.out.println("Cadastrado com sucesso!");
+				}
+				else {
+					System.out.println("Erro ao tentar cadastrar");
+				}
 			}
-			else {
-				System.out.println("Erro ao tentar cadastrar");
+			else {	
+				System.out.println("Existem campos vazios, tente novamente!");
 			}
 		}else {
 			System.out.println("Esse id ja esta cadastrado!");

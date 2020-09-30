@@ -8,8 +8,8 @@ import java.util.Scanner;
 import local.LocalControlador;
 
 public class EventoFronteira {
-	EventoControlador eventoControlador = EventoControlador.getInstance();
-	LocalControlador localControlador = LocalControlador.getInstance();
+	private EventoControlador eventoControlador = EventoControlador.getInstance();
+	private LocalControlador localControlador = LocalControlador.getInstance();
 	Scanner input = new Scanner(System.in);
 	public void cadastrarEvento() {
 		int id,local;
@@ -24,47 +24,56 @@ public class EventoFronteira {
 			
 			System.out.print("Data(AAAA-MM-DD): ");
 			date = input.nextLine();
-			LocalDate data = LocalDate.parse(date);
-			if(data.isAfter(LocalDate.now())){
-				System.out.print("Horario(HH:MM): ");
-				time = input.nextLine();
-				LocalTime horario = LocalTime.parse(time);
-		
-				System.out.print("Id do local: ");
-				local = input.nextInt();
-				input.nextLine();
-				
-				System.out.print("Descricao: ");
-				descricao = input.nextLine();
-				
-				if(localControlador.localExiste(local)) {
-					EventoEntidade e = new EventoEntidade(id, nome, descricao, data, horario, local);
-					if(eventoControlador.cadastrarEvento(e)) {
-						System.out.println("Cadastrado com sucesso!");
-					}else {
-						System.out.println("Deu ruim");
+			
+			System.out.print("Horario(HH:MM): ");
+			time = input.nextLine();
+	
+			System.out.print("Id do local: ");
+			local = input.nextInt();
+			input.nextLine();
+			
+			System.out.print("Descricao: ");
+			descricao = input.nextLine();
+			if(!nome.equals("") && !date.equals("") && !time.equals("") && descricao.equals("")) {
+				LocalDate data = LocalDate.parse(date);
+				if(data.isAfter(LocalDate.now())){
+					LocalTime horario = LocalTime.parse(time);
+					if(localControlador.localExiste(local)) {
+						EventoEntidade e = new EventoEntidade(id, nome, descricao, data, horario, local);
+						if(eventoControlador.cadastrarEvento(e)) {
+							System.out.println("Cadastrado com sucesso!");
+						}else {
+							System.out.println("Erro ao tentar cadastrar");
+						}
+					}
+					else {
+						System.out.println("Esse local nao existe!");
 					}
 				}
 				else {
-					System.out.println("Esse local nao existe!");
+					System.out.println("A data tem que ser superior a atual");
 				}
 			}
 			else {
-				System.out.println("A data tem que ser superior a atual");
+				System.out.println("Existem campos vazios, tente novamente!");
 			}
-		}
-		else {
-			System.out.println("Esse id ja esta cadastrado!");
-		}
+			
 	}
+	else {
+		System.out.println("Esse id ja esta cadastrado!");
+	}
+}
 	
 	public void excluirEvento() {
-		System.out.print("Digite o id: ");
-		if(eventoControlador.excluirEvento(input.nextInt())) {
-			System.out.println("Deletado com sucesso!");
-		}
-		else {
-			System.out.println("Deu ruim");
+		listarTodosEventos(1);
+		if(!eventoControlador.listareventos().isEmpty()) {
+			System.out.print("Digite o id: ");
+			if(eventoControlador.excluirEvento(input.nextInt())) {
+				System.out.println("Deletado com sucesso!");
+			}
+			else {
+				System.out.println("Deu ruim");
+			}
 		}
 	}
 	
@@ -86,12 +95,10 @@ public class EventoFronteira {
 		}
 	}
 	
-	public void listarPorBairros(int usuario){
-		System.out.print("Nome do bairro: ");
-		String nome = input.nextLine();
+	public void listarPorBairros(String nome){
 		ArrayList<Integer> ids = localControlador.pegarIds(nome);
 		ArrayList<EventoEntidade> eventos = eventoControlador.listarPorBairro(ids);
-		listarEventos(usuario,eventos);
+		listarEventos(2,eventos);
 	}
 	
 	public void listarTodosEventos(int usuario) {

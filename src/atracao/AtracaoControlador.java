@@ -6,7 +6,7 @@ import atracaoEvento.AtracaoEventoDAO;
 
 public class AtracaoControlador {
 	private static AtracaoControlador atracaoControlador;
-	AtracaoDAO atracaoDAO = AtracaoDAO.getInstance();
+	private AtracaoDAO atracaoDAO = AtracaoDAO.getInstance();
 	
 	AtracaoControlador(){
 	}

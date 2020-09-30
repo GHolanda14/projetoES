@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class EventoControlador {
 	private static EventoControlador eventoControlador;
-	EventoDAO eventoDAO = EventoDAO.getInstance();
+	private EventoDAO eventoDAO = EventoDAO.getInstance();
 	
 	EventoControlador(){
 	}

@@ -2,9 +2,9 @@ package usuarios;
 
 import evento.EventoFronteira;
 import local.LocalFronteira;
-
+import java.util.Scanner;
 public class Participante {	
-	
+	private Scanner input = new Scanner(System.in);
 	public void listarEventos() {
 		EventoFronteira eventoFronteira = new EventoFronteira();
 		eventoFronteira.listarTodosEventos(2);
@@ -14,8 +14,10 @@ public class Participante {
 		localFronteira.listarInformacoesLocal();
 	}
 	public void listarPorBairro() {
+		System.out.print("Nome do bairro: ");
+		String nome = input.nextLine();
 		EventoFronteira eventoFronteira = new EventoFronteira();
-		eventoFronteira.listarPorBairros(2);
+		eventoFronteira.listarPorBairros(nome);
 	}
 	
 	public void escolheOpcao(int opcao) {

@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class LocalControlador {
 	private static LocalControlador localControlador;
-	LocalDAO localDAO = LocalDAO.getInstance();
+	private LocalDAO localDAO = LocalDAO.getInstance();
 	
 	LocalControlador(){
 	}

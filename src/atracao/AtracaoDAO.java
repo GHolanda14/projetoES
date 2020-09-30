@@ -3,7 +3,7 @@ package atracao;
 import java.util.ArrayList;
 
 public class AtracaoDAO {
-	ArrayList <AtracaoEntidade> atracoes;
+	private ArrayList <AtracaoEntidade> atracoes;
 	private static AtracaoDAO atracaoDAO;
 	AtracaoDAO(){
 		atracoes = new ArrayList <AtracaoEntidade>();

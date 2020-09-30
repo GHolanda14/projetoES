@@ -9,15 +9,14 @@ import java.util.Scanner;
 
 public class Administrador {
 	private Scanner input;
-	Menu menu = new Menu();
+	private Menu menu = new Menu();
 	public void escolheGerencia(int classe) {
 		input = new Scanner(System.in);
 		int comando;
 		do{
 			switch(classe) {
 				case 1:
-					System.out.println(menu.menuCRUD().replaceAll("3 - Listar\n0 - Voltar","3 - Listar todos os eventos\n"
-							+ "4 - Listar eventos por bairro\n0 - Voltar"));
+					System.out.println(menu.menuCRUD().replaceAll("3 - Listar\n0 - Voltar","3 - Listar todos os eventos\n0 - Voltar"));
 					comando = input.nextInt();
 					gerenciarEvento(comando);
 					break;
@@ -53,9 +52,6 @@ public class Administrador {
 				break;
 			case 3:
 				eventoFronteira.listarTodosEventos(1);
-				break;
-			case 4:
-				eventoFronteira.listarPorBairros(1);
 				break;
 			case 0:
 				comando = 0;
