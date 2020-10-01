@@ -24,11 +24,11 @@ public class LocalFronteira {
 			System.out.print("Rua: ");
 			rua = input.nextLine();
 			
-			System.out.print("Numero: ");
+			System.out.print("Número: ");
 			numero = input.nextInt();
 			input.nextLine();
 			
-			System.out.print("Ponto de Referencia: ");
+			System.out.print("Ponto de Referência: ");
 			pontoDeReferencia = input.nextLine();
 			
 			System.out.print("Telefone (XX) XXXXX-XXXX: ");
@@ -47,7 +47,7 @@ public class LocalFronteira {
 			}
 		}
 		else {
-			System.out.println("Esse id ja esta cadastrado!");
+			System.out.println("Esse id já esta cadastrado!");
 		}
 		
 	}
@@ -68,7 +68,7 @@ public class LocalFronteira {
 	public void listarLocais() {
 		ArrayList <LocalEntidade> locais = localControlador.listarlocais();
 		if(locais.isEmpty()) {
-			System.out.println("Nao exitem locais");
+			System.out.println("Não exitem locais");
 		}
 		else {
 			for(LocalEntidade l : locais) {
@@ -84,7 +84,7 @@ public class LocalFronteira {
 		ArrayList<LocalEntidade> locais = localControlador.listarInformacoesLocal(nome);
 		
 		if(locais.isEmpty()) {
-			System.out.println("Nao exitem locais");
+			System.out.println("Não exitem locais");
 		}
 		else {
 			for(LocalEntidade l : locais) {

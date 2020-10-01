@@ -25,14 +25,14 @@ public class EventoFronteira {
 			System.out.print("Data(AAAA-MM-DD): ");
 			date = input.nextLine();
 			
-			System.out.print("Horario(HH:MM): ");
+			System.out.print("Horário(HH:MM): ");
 			time = input.nextLine();
 	
 			System.out.print("Id do local: ");
 			local = input.nextInt();
 			input.nextLine();
 			
-			System.out.print("Descricao: ");
+			System.out.print("Descrição: ");
 			descricao = input.nextLine();
 			if(!nome.equals("") && !date.equals("") && !time.equals("") && descricao.equals("")) {
 				LocalDate data = LocalDate.parse(date);
@@ -47,7 +47,7 @@ public class EventoFronteira {
 						}
 					}
 					else {
-						System.out.println("Esse local nao existe!");
+						System.out.println("Esse local não existe!");
 					}
 				}
 				else {
@@ -60,7 +60,7 @@ public class EventoFronteira {
 			
 	}
 	else {
-		System.out.println("Esse id ja esta cadastrado!");
+		System.out.println("Esse id já está cadastrado!");
 	}
 }
 	
@@ -72,14 +72,14 @@ public class EventoFronteira {
 				System.out.println("Deletado com sucesso!");
 			}
 			else {
-				System.out.println("Deu ruim");
+				System.out.println("Erro ao tentar deletar");
 			}
 		}
 	}
 	
 	public void listarEventos(int usuario, ArrayList<EventoEntidade> eventos) {
 		if(eventos.isEmpty()) {
-			System.out.println("Nao exitem eventos");
+			System.out.println("Não exitem eventos");
 		}
 		else {
 			for(EventoEntidade a : eventos) {

@@ -35,7 +35,7 @@ public class AtracaoFronteira {
 				System.out.println("Existem campos vazios, tente novamente!");
 			}
 		}else {
-			System.out.println("Esse id ja esta cadastrado!");
+			System.out.println("Esse id já está cadastrado!");
 		}
 	}
 	
@@ -55,7 +55,7 @@ public class AtracaoFronteira {
 	public void listarAtracoes() {
 		ArrayList <AtracaoEntidade> atracoes = atracaoControlador.listarAtracoes();
 		if(atracoes.isEmpty()) {
-			System.out.println("Nao exitem atracoes");
+			System.out.println("Não exitem atracoes");
 		}
 		else {
 			for(AtracaoEntidade a : atracoes) {
@@ -73,25 +73,25 @@ public class AtracaoFronteira {
 		evento_id = input.nextInt();
 		
 		if(atracaoControlador.incluirAtracao(atracao_id, evento_id)) {
-			System.out.println("Atracao incluida ao evento com sucesso!");
+			System.out.println("Atração incluida ao evento com sucesso!");
 		}
 		else {
-			System.out.println("Erro ao tentar incluir a atracao do evento");
+			System.out.println("Erro ao tentar incluir a atração do evento");
 		}
 	}
 	
 	public void retirarAtracao() {
 		int atracao_id,evento_id;
-		System.out.print("Id atracao: ");
+		System.out.print("Id atração: ");
 		atracao_id = input.nextInt();
 		System.out.print("Id evento: ");
 		evento_id = input.nextInt();
 		
 		if(atracaoControlador.retirarAtracao(atracao_id, evento_id)){
-			System.out.println("Atracao retirada do evento com sucesso!");
+			System.out.println("Atração retirada do evento com sucesso!");
 		}
 		else {
-			System.out.println("Erro ao tentar retirar a atracao do evento");
+			System.out.println("Erro ao tentar retirar a atração do evento");
 		}
 	}
 }
