@@ -34,7 +34,7 @@ public class EventoFronteira {
 			
 			System.out.print("Descrição: ");
 			descricao = input.nextLine();
-			if(!nome.equals("") && !date.equals("") && !time.equals("") && descricao.equals("")) {
+			if(!nome.equals("") && !date.equals("") && !time.equals("") && !descricao.equals("")) {
 				LocalDate data = LocalDate.parse(date);
 				if(data.isAfter(LocalDate.now())){
 					LocalTime horario = LocalTime.parse(time);
