@@ -8,7 +8,7 @@ public class Menu {
 	public void menuAdministrador() {
 		System.out.println("1 - Evento");
 		System.out.println("2 - Local");
-		System.out.println("3 - Atracao");
+		System.out.println("3 - Atração");
 		System.out.println("0 - Voltar");
 	}
 	
@@ -25,7 +25,7 @@ public class Menu {
 	public void menuParticipante() {
 		System.out.println("1 - Lista de eventos");
 		System.out.println("2 - Listar eventos por bairro");
-		System.out.println("3 - Listar informacoes do local");
+		System.out.println("3 - Listar informações do local");
 		System.out.println("0 - Voltar");
 	}
 }
