@@ -20,6 +20,6 @@ public class AtracaoEntidade {
 		return atracao_nome;
 	}
 	public String toStringAdministrador() {
-		return "Id: "+atracao_id+" => "+atracao_nome+"\nEmail: "+atracao_email+"\nTelefone: "+atracao_telefone;
+		return "Id: "+atracao_id+" => "+atracao_nome+"\nE-mail: "+atracao_email+"\nTelefone: "+atracao_telefone;
 	}
 }
